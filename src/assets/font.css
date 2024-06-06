@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "fontOsSiemreap";
+  src: url("./src/assets/fonts/KHMEROSSIEMREAP.TTF");
+}
+.customFont {
+  font-family: "fontOsSiemreap";
+}

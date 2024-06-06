@@ -1,0 +1,129 @@
+[
+  {
+    "id": 1,
+    "img": "https://www.syndetics.com/index.aspx?isbn=9781443467810&issn=/LC.JPG&client=pickp&type=xw12",
+    "title": "Trust Telling",
+    "subtitle": "A bold, provocative examination of Canadian Indigenous issues from advocate, activist and award-winning novelist Michelle Good. Truth Telling is a collection of essays about the contemporary Indigenous experience in Canada. Seven Conversations About Indigenous Life in Canada",
+    "author": "Good, Michell  e",
+    "rating": 4,
+    "publish_date": "2010",
+    "publisher": "NUBB",
+    "language": "English",
+    "type":"it"
+  },
+  {
+    "id": 2,
+    "img": "https://cdn.hackr.io/uploads/posts/attachments/1674217391vZHygNFlAc.png",
+    "title": "Javascript",
+    "subtitle": "JavaScript is a text-based programming language used both on the client-side and server-side that allows you to make web pages interactive. Where HTML and CSS are languages that give structure and style to web pages, JavaScript gives web pages interactive elements that engage a user. This is the best book for learning Javascript.",
+    "publish_date": "2004",
+    "publisher": "NUBB",
+    "language": "English",
+    "author": "Teang Tela",
+    "rating": 3,
+    "type":"it"
+  },
+  {
+    "id": 3,
+    "img": "https://tse4.mm.bing.net/th?id=OIP.Z2kVxqDKIiipvscSF8xveAHaMH&pid=Api&P=0&h=220",
+    "title": "C++",
+    "subtitle": "C++ is an object-oriented programming (OOP) language that is viewed by many as the best language for creating large-scale applications. C++ is a superset of the C language. This is the best book for learning C++ ",
+    "rating": 4.5,
+    "publish_date": "2021",
+    "publisher": "NUBB",
+    "language": "English",
+    "author": "Kouch David",
+    "type":"it"
+  },
+  {
+    "id": 4,
+    "img": "https://1.bp.blogspot.com/-6fJuKSTUXXg/Xz6EmUefXNI/AAAAAAAAIf8/UMx_9A5zfvA2OCS2LtcJXszgV7eR-PcugCLcBGAsYHQ/s1600/touchmaster_1597932460033.jpeg",
+    "title": "Python",
+    "subtitle": "Python is an open-source programming language, having features like object-oriented, interpreted and high-level too. It is a dynamically typed programming language, which is easy to use with redable and user-friendly syntax. It has huge libraries, frameworks and large community support. This is the best book for learning Python",
+    "rating": 5,
+    "publish_date": "2011",
+    "publisher": "NUBB",
+    "language": "English",
+    "author": "Tep Reaksmey",
+    "type":"it"
+  },
+  {
+    "id": 5,
+    "img": "https://m.media-amazon.com/images/I/71ZN3CI-esL.jpg",
+    "title": "HTML & CSS",
+    "subtitle": "HTML is a markup language used to create static web pages and web applications. CSS is a style sheet language responsible for the presentation of documents written in a markup language. This is the best book for begginer to learn.",
+    "rating": 4,
+    "publish_date": "24 November 2021",
+    "publisher": "NUBB",
+    "language": "English",
+    "author": "Sorm Rafat",
+    "type":"it"
+  },
+  {
+    "id": 6,
+    "img": "https://rukminim2.flixcart.com/image/850/1000/xif0q/book/d/h/g/php-programming-the-complete-guide-2022-original-imagh4wmmbxh8fpy.jpeg?q=90&crop=false ",
+    "title": "PHP",
+    "subtitle": "This is the best book for learning PHP",
+    "rating": 4.5,
+    "type":"it"
+
+  },
+  {
+    "id": 7,
+    "img": "https://sanet.pics/storage-5/1019/Ricn0momb33y0H5oUtsWonsKKQba3ciU.jpg",
+    "title": "C#",
+    "subtitle": "This is the best book for learning C#",
+    "rating": 4,
+    "type":"it"
+  },
+  {
+    "id": 8,
+    "img": "https://www.flutterengineering.io/bookcover_isbn.png",
+    "title": "Flutter",
+    "subtitle": "This is the best book for learning Flutter",
+    "rating": 3,
+    "type":"it"
+  },
+  {
+    "id": 9,
+    "img": "https://www.english-efl.com/wp-content/uploads/2019/02/intermediate-english-grammar.png",
+    "title": "Grammar",
+    "subtitle": "This is the best book for learning Grammar",
+    "rating": 2,
+    "type":"english"
+  },
+  {
+    "id": 10,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyRwXp8dnJ9FD9or-VXGIwz0-Hnv-sgQUfxgyqKJiRY_CtlC5ZebqLaVsUktXjrCCfxbw&usqp=CAU",
+    "title": "Mindset",
+    "subtitle": "This is the best book for learning Grammar",
+    "rating": 4,
+    "type":"General"
+
+  },
+  {
+    "id": 11,
+    "img": "https://rukminim2.flixcart.com/image/750/900/l51d30w0/book/c/z/q/c-programming-language-comprehensive-book-2022-original-imagfsqwmhyepk7n.jpeg?q=20&crop=false",
+    "title": "C pro",
+    "subtitle": "This is the best book for learning C programming language",
+    "rating": 3,
+    "type":"it"
+  },
+  {
+    "id": 12,
+    "img": "https://learnenglishwithcamille.com/wp-content/uploads/2022/08/101-real-life-english-conversations-cover-1.png",
+    "title": "Coversation",
+    "subtitle": "This is the best book for learning conversation",
+    "rating": 4.5,
+    "type":"english"
+
+  },
+  {
+    "id": 13,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQltH0uttmTnsPFOb91S41rn-ZdehvVY-77BeJshQYkyQ&s",
+    "title": "Law",
+    "subtitle": "This is the best book for learning conversation",
+    "rating": 4.5,
+    "type":"law"
+  }
+]
