@@ -14,7 +14,6 @@ const appFontStyle = computed(() => {
   return i18n.locale.value === "km" ? "customFont" : "";
 });
 
-
 // const storearr = StoreList();
 
 const headers = ref([
@@ -40,8 +39,25 @@ const headers = ref([
   },
 ]);
 
-const roles = ref(["Cleaner", "Manager", "Employee"]);
-
+// const roles = ref(["Cleaner", "Manager", "Employee"]);
+const roles = ref([
+  {
+    nameen: "Cleaner",
+    nameId: "1",
+  },
+  {
+    nameen: "Manager",
+    nameId: "2",
+  },
+  {
+    nameen: "Security",
+    nameId: "3",
+  },
+  {
+    nameen: "Employee",
+    nameId: "4",
+  },
+]);
 
 const dialog = ref(false);
 const deleteItem = ref({});
@@ -107,7 +123,9 @@ const addItems = () => {
     form.value.name == null ||
     form.value.email == null ||
     form.value.id == null ||
-    form.value.role == null || form.value.role.length < 0 || form.value.role == ""
+    form.value.role == null ||
+    form.value.role.length < 0 ||
+    form.value.role == ""
   ) {
     errorMessage.value = "Please input all the field";
     dialog.value = true;
@@ -130,7 +148,7 @@ const addItems = () => {
       });
       title.value = "Add";
     }
-    errorMessage.value = ""
+    errorMessage.value = "";
     dialog.value = false;
     //clear
     form.value.name = null;
@@ -169,12 +187,12 @@ const edit = (item) => {
       <v-card class="pa-6">
         <v-card-tittle :class="appFontStyle">
           <!-- <h2>{{ $t("message.AddMembers") }}</h2> -->
-          <h2>{{ $t('message.AddMembers') }}</h2>
+          <h2>{{ $t("message.AddMembers") }}</h2>
         </v-card-tittle>
         <v-card-text>
           <v-form :class="appFontStyle">
             <v-row>
-              <v-col cols="12" md="6" >
+              <v-col cols="12" md="6">
                 <v-text-field
                   v-model="form.name"
                   density="compact"
@@ -215,7 +233,9 @@ const edit = (item) => {
                   persistent-hint
                   :label="$t('message.Role')"
                   density="compact"
-                  :items="$t('message.roles')"
+                  :items="roles"
+                  item-title="nameen"
+                  item-value="nameen"
                 >
                 </v-select>
               </v-col>
@@ -240,7 +260,10 @@ const edit = (item) => {
       <v-row class="align-center">
         <v-col cols="12" md="6">
           <v-card :variant="flat - 0">
-            <v-card-title class="text-h5 d-flex align-center" :class="appFontStyle">
+            <v-card-title
+              class="text-h5 d-flex align-center"
+              :class="appFontStyle"
+            >
               {{ $t("message.Members") }}
             </v-card-title>
             <v-card-subtitle class="text-subtitle">
@@ -283,7 +306,12 @@ const edit = (item) => {
     <v-divider></v-divider>
 
     <div class="mt-9">
-      <v-data-table :headers="headers" :items="items" :search="search" class="rounded-lg border-sm">
+      <v-data-table
+        :headers="headers"
+        :items="items"
+        :search="search"
+        class="rounded-lg border-sm"
+      >
         <template v-slot:item.action="row">
           <v-btn
             class="text-warning"
