@@ -7,26 +7,25 @@ const search = ref("");
 
 const items = ref([
   { title: "All" },
-  {title: "PopularBook"},  
+  { title: "PopularBook" },
   { title: "IT" },
   { title: "Law" },
   { title: "English" },
   { title: "General" },
-   
 ]);
-const selectBook = (t)=>{
-  console.log(t)
-  bookItem.value = Item.filter((item)=>{
-    return item.type.toLowerCase() == t.toLowerCase()
-  })
-  if(t=="All"){
-    bookItem.value = Item
-  }else if(t=="PopularBook"){
-    bookItem.value = Item.filter((item)=>{
-      return item.rating>4
-    })
+const selectBook = (t) => {
+  console.log(t);
+  bookItem.value = Item.filter((item) => {
+    return item.type.toLowerCase() == t.toLowerCase();
+  });
+  if (t == "All") {
+    bookItem.value = Item;
+  } else if (t == "PopularBook") {
+    bookItem.value = Item.filter((item) => {
+      return item.rating > 4;
+    });
   }
-}
+};
 watch(search, () => {
   bookItem.value = Item.filter((item) => {
     return item.title.toLowerCase().includes(search.value.toLowerCase());
@@ -158,13 +157,13 @@ const detailFuction = (id) => {
 console.log(search.value);
 </script>
 <template>
-  <div >
+  <div>
     <div>
       <v-row class="align-center">
         <v-col cols="12" md="6">
           <v-card :variant="flat - 0">
             <v-card-title class="text-h5 d-flex align-center">
-              {{ $t('message.AllBook') }}
+              {{ $t("message.AllBook") }}
             </v-card-title>
             <v-card-subtitle class="text-subtitle">
               U can read our book right here. Learn Earn Fuck
@@ -187,7 +186,9 @@ console.log(search.value);
         <v-col cols="auto" md="2">
           <v-menu>
             <template v-slot:activator="{ props }">
-              <v-btn color="primary" v-bind="props">{{ $t('message.SelectType') }}</v-btn>
+              <v-btn color="primary" v-bind="props">{{
+                $t("message.SelectType")
+              }}</v-btn>
             </template>
             <v-list>
               <v-list-item
@@ -196,7 +197,9 @@ console.log(search.value);
                 :value="index"
                 @click="selectBook(item.title)"
               >
-                <v-list-item-title>{{ $t(`message.${item.title}`) }}</v-list-item-title>
+                <v-list-item-title>{{
+                  $t(`message.${item.title}`)
+                }}</v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
@@ -288,6 +291,10 @@ console.log(search.value);
                 {{ findId.subtitle }}
               </v-card-text>
               <template v-slot:actions>
+                <a :href="findId.link">
+                  <v-btn class="mt-5 bg-green" text="Read More"> </v-btn>
+                </a>
+
                 <v-btn
                   class="ms-auto mt-5 bg-red"
                   text="Exit"

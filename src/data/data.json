@@ -9,7 +9,8 @@
     "publish_date": "2010",
     "publisher": "NUBB",
     "language": "English",
-    "type":"it"
+    "type": "it",
+    "link": "https://www.tacoma.uw.edu/sites/default/files/2020-09/thinbookoftrust.pdf"
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "language": "English",
     "author": "Teang Tela",
     "rating": 3,
-    "type":"it"
+    "type": "it",
+    "link": " https://www.tutorialspoint.com/javascript/javascript_tutorial.pdf"
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "publisher": "NUBB",
     "language": "English",
     "author": "Kouch David",
-    "type":"it"
+    "type": "it",
+    "link": "https://cplusplus.com/files/tutorial.pdf"
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     "publisher": "NUBB",
     "language": "English",
     "author": "Tep Reaksmey",
-    "type":"it"
+    "type": "it",
+    "link": "https://bugs.python.org/file47781/Tutorial_EDIT.pdf"
   },
   {
     "id": 5,
@@ -57,7 +61,7 @@
     "publisher": "NUBB",
     "language": "English",
     "author": "Sorm Rafat",
-    "type":"it"
+    "type": "it"
   },
   {
     "id": 6,
@@ -65,8 +69,7 @@
     "title": "PHP",
     "subtitle": "This is the best book for learning PHP",
     "rating": 4.5,
-    "type":"it"
-
+    "type": "it"
   },
   {
     "id": 7,
@@ -74,7 +77,7 @@
     "title": "C#",
     "subtitle": "This is the best book for learning C#",
     "rating": 4,
-    "type":"it"
+    "type": "it"
   },
   {
     "id": 8,
@@ -82,7 +85,7 @@
     "title": "Flutter",
     "subtitle": "This is the best book for learning Flutter",
     "rating": 3,
-    "type":"it"
+    "type": "it"
   },
   {
     "id": 9,
@@ -90,7 +93,7 @@
     "title": "Grammar",
     "subtitle": "This is the best book for learning Grammar",
     "rating": 2,
-    "type":"english"
+    "type": "english"
   },
   {
     "id": 10,
@@ -98,8 +101,7 @@
     "title": "Mindset",
     "subtitle": "This is the best book for learning Grammar",
     "rating": 4,
-    "type":"General"
-
+    "type": "General"
   },
   {
     "id": 11,
@@ -107,7 +109,7 @@
     "title": "C pro",
     "subtitle": "This is the best book for learning C programming language",
     "rating": 3,
-    "type":"it"
+    "type": "it"
   },
   {
     "id": 12,
@@ -115,8 +117,7 @@
     "title": "Coversation",
     "subtitle": "This is the best book for learning conversation",
     "rating": 4.5,
-    "type":"english"
-
+    "type": "english"
   },
   {
     "id": 13,
@@ -124,6 +125,6 @@
     "title": "Law",
     "subtitle": "This is the best book for learning conversation",
     "rating": 4.5,
-    "type":"law"
+    "type": "law"
   }
 ]
