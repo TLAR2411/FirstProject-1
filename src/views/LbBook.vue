@@ -213,8 +213,9 @@ console.log(search.value);
         <v-divider> </v-divider>
       </v-row>
 
-      <v-dialog v-model="dialog" max-width="950">
-        <v-row class="bg-white rounded-lg pa-6">
+      <v-dialog v-model="dialog" max-width="980" scrollable class="pa-6">
+        <div style="overflow-y: scroll;">
+          <v-row class="bg-white rounded-lg">
           <v-col cols="12" md="5">
             <v-card flat>
               <v-img :src="findId.img" height="350"></v-img>
@@ -303,6 +304,8 @@ console.log(search.value);
             </v-card>
           </v-col>
         </v-row>
+        </div>
+       
       </v-dialog>
 
       <v-row>

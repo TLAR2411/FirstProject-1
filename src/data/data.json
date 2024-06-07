@@ -79,7 +79,8 @@
     "title": "C#",
     "subtitle": "This is the best book for learning C#",
     "rating": 4,
-    "type": "it"
+    "type": "it",
+    "link": "https://www.introprogramming.info/wp-content/uploads/2013/07/Books/CSharpEn/Fundamentals-of-Computer-Programming-with-CSharp-Nakov-eBook-v2013.pdf"
   },
   {
     "id": 8,
@@ -87,7 +88,9 @@
     "title": "Flutter",
     "subtitle": "This is the best book for learning Flutter",
     "rating": 3,
-    "type": "it"
+    "type": "it",
+    "link": "https://www.tutorialspoint.com/flutter/flutter_tutorial.pdf"
+
   },
   {
     "id": 9,
