@@ -292,14 +292,13 @@ console.log(search.value);
               </v-card-text>
               <template v-slot:actions>
                 <a :href="findId.link">
-                  <v-btn class="mt-5 bg-green" text="Read More"> </v-btn>
+                  <v-btn class="mt-5 bg-green"> {{$t('message.ReadMore')}} </v-btn>
                 </a>
 
                 <v-btn
                   class="ms-auto mt-5 bg-red"
-                  text="Exit"
                   @click="dialog = false"
-                ></v-btn>
+                >{{$t('message.Exit')}}</v-btn>
               </template>
             </v-card>
           </v-col>
@@ -340,7 +339,7 @@ console.log(search.value);
                     variant="outlined"
                     @click="detailFuction(item.id)"
                   >
-                    Detail
+                    {{$t('message.Detail')}}
                   </v-btn>
                 </v-col>
               </v-row>

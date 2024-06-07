@@ -61,7 +61,8 @@
     "publisher": "NUBB",
     "language": "English",
     "author": "Sorm Rafat",
-    "type": "it"
+    "type": "it",
+    "link":"https://www.dcpehvpm.org/E-Content/BCA/BCA-II/Web%20Technology/the-complete-reference-html-css-fifth-edition.pdf"
   },
   {
     "id": 6,
@@ -69,7 +70,8 @@
     "title": "PHP",
     "subtitle": "This is the best book for learning PHP",
     "rating": 4.5,
-    "type": "it"
+    "type": "it",
+    "link":"https://assets.ctfassets.net/nkydfjx48olf/5qFMF3mvitLMahX67i7iOb/028229996c13cbc27a0538f055a41b46/php_cookbook.pdf"
   },
   {
     "id": 7,

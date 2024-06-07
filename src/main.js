@@ -26,6 +26,9 @@ const messages = {
   en: {
     message: {
       Library:"Library",
+      ReadMore:"Read More",
+      Exit:"Exit",
+      Detail : "Detail",
       // Dashboard
       Dashboard: "Dashboard",
       BorrowedBooks: "Borrowed Books",
@@ -84,6 +87,9 @@ const messages = {
   km: {
     message: {
       Library: "បណ្ណាល័យ",
+      ReadMore: "អានបន្ថែម",
+      Exit :"ចាកចេញ",
+      Detail : "លម្អិត",
       // Dashboard
       Dashboard: "ផ្ទាំងគ្រប់គ្រង",
       BorrowedBooks: "ខ្ចីសៀវភៅ",
