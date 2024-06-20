@@ -3,6 +3,7 @@ import { computed, ref, watch } from "vue";
 import barCharVue from "../components/barChar.vue";
 import lineChart from "../components/lineChart.vue";
 import douChart from "../components/douChart.vue";
+// import schedular from "../components/schedular.vue";
 import Item from "../data/data.json";
 import { useI18n } from "vue-i18n";
 const bookItem = ref([]);
@@ -167,6 +168,11 @@ const appFontStyle = computed(() => {
         <douChart />
       </v-col>
     </v-row>
+    <!-- <v-row>
+      <v-col cols="12" md="12">
+        <schedular/>
+      </v-col>
+    </v-row> -->
 
     <!-- popularbook -->
     <!-- <h2 class="my-5 text-h4 text-red" :class="appFontStyle">{{ $t("message.PopularBook") }}</h2> -->

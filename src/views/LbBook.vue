@@ -213,8 +213,8 @@ console.log(search.value);
         <v-divider> </v-divider>
       </v-row>
 
-      <v-dialog v-model="dialog" max-width="980" scrollable class="pa-6">
-        <div style="overflow-y: scroll;">
+      <v-dialog v-model="dialog" max-width="980" class="pa-6" scroll-strategy="block" scrollable>
+        <div class="scrollable-content " >
           <v-row class="bg-white rounded-lg">
           <v-col cols="12" md="5">
             <v-card flat>
@@ -353,3 +353,10 @@ console.log(search.value);
     </div>
   </div>
 </template>
+
+<style>
+.scrollable-content {
+  max-height: 90vh; /* Adjust the max-height to fit your needs */
+  overflow-y: auto;
+}
+</style>

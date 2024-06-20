@@ -48,12 +48,10 @@ const password = ref('');
 
 <template>
   //login dailog
-  <v-dialog v-model="dailogLogin" max-width="300" persistent >
+  <v-dialog v-model="dailogLogin" :width="500" persistent opacity="1">
     <v-card
       class="mx-auto pa-6 pb-8"
       elevation="8"
-      max-width="450"
-      width="800"
       rounded="lg"
     >
     <v-img

@@ -14,6 +14,7 @@ import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
 import { Title } from "chart.js";
+// import { VCalendar } from 'vuetify/labs/VCalendar'
 
 import "../src/assets/font.css";
 
@@ -176,6 +177,9 @@ export default createVuetify({
     },
   },
 });
+
+
+
 
 app.use(i18n);
 app.use(router);
