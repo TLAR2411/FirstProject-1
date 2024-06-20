@@ -37,14 +37,101 @@ const toggleTheme = () => {
 
   console.log(`Current theme is dark? ${themeName.value}`);
 };
+
+//login dailog
+const dailogLogin = ref(true);
+const visible = ref(false);
 </script>
 
 <template>
+  //login dailog
+  <v-dialog v-model="dailogLogin" max-width="400" persistent>
+    
+    <v-card
+      class="mx-auto pa-6 pb-8"
+      elevation="8"
+      max-width="550"
+      width="900"
+      rounded="lg"
+    >
+    <v-img
+      :width="90"
+      aspect-ratio="16/9"
+      cover
+      class="mx-auto"
+      src="https://nubb.edu.kh/wp-content/uploads/2021/04/UBB-logo-small.png"
+    ></v-img>
+      <div class="text-h6 text-medium-emphasis">Account</div>
+
+      <v-text-field
+        density="comfortable"
+        placeholder="Email address"
+        prepend-inner-icon="mdi-email-outline"
+        variant="outlined"
+      ></v-text-field>
+
+      <div
+        class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between"
+      >
+        Password
+
+        <a
+          class="text-caption text-decoration-none text-blue"
+          href="#"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Forgot login password?</a
+        >
+      </div>
+
+      <v-text-field
+        :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
+        :type="visible ? 'text' : 'password'"
+        density="comfortable"
+        placeholder="Enter your password"
+        prepend-inner-icon="mdi-lock-outline"
+        variant="outlined"
+        @click:append-inner="visible = !visible"
+      ></v-text-field>
+
+      <v-card class="mb-12" color="surface-variant" variant="tonal">
+        <v-card-text class="text-medium-emphasis text-caption">
+          Warning: After 3 consecutive failed login attempts, you account will
+          be temporarily locked for three hours. If you must login now, you can
+          also click "Forgot login password?" below to reset the login password.
+        </v-card-text>
+      </v-card>
+
+      <v-btn
+        class="mb-8"
+        color="blue"
+        size="large"
+        variant="tonal"
+        block
+        @click="dailogLogin = false"
+      >
+        Log In
+      </v-btn>
+
+      <v-card-text class="text-center">
+        <a
+          class="text-blue text-decoration-none"
+          href="#"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Sign up now <v-icon icon="mdi-chevron-right"></v-icon>
+        </a>
+      </v-card-text>
+    </v-card>
+  </v-dialog>
+
   <v-app>
     <!-- bar -->
-    <v-app-bar style="background-color: #1B5E20 ; color: white;" >
+    <v-app-bar style="background-color: #1b5e20; color: white">
       <v-app-bar-title class="text-p" :class="appFontStyle">
-        {{ $t('message.Library') }}
+        {{ $t("message.Library") }}
         <v-icon color="grey"> mdi-library </v-icon>
       </v-app-bar-title>
       <!-- <v-text-field
@@ -139,7 +226,11 @@ const toggleTheme = () => {
     </v-app-bar>
 
     <!-- v-navigation-drawer -->
-    <v-navigation-drawer v-model="drawer" style="background-color: #1B5E20; color: white;" :width="220">
+    <v-navigation-drawer
+      v-model="drawer"
+      style="background-color: #1b5e20; color: white"
+      :width="220"
+    >
       <v-list>
         <v-list-item>
           <v-img
@@ -165,7 +256,7 @@ const toggleTheme = () => {
             :value="item"
             color="#76FF03"
             :to="item.to"
-            class="text-body-4 mt-1 mx-1 rounded-lg  "
+            class="text-body-4 mt-1 mx-1 rounded-lg"
           >
             <template v-slot:prepend>
               <v-icon :icon="item.icon"></v-icon>

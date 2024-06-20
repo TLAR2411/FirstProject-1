@@ -3,6 +3,7 @@ import { ref, watch, computed } from "vue";
 // import Form from "../components/Form.vue";
 import { StoreList } from "../store/store";
 import { useI18n } from "vue-i18n";
+import Toast from "@/helpers/toast";
 const search = ref("");
 const errorMessage = ref("");
 const rules = ref({
@@ -137,8 +138,18 @@ const addItems = () => {
         id: form.value.id,
         role: form.value.role,
       });
+
       title.value = "Add";
+
+      Toast.fire({
+        text: "Item added successfully",
+        icon: "success",
+      });
+
+
     } else {
+      
+      //edit button
       const index = items.value.findIndex((item) => item.id == form.value.id);
       items.value.splice(index, 1, {
         name: form.value.name,
@@ -178,6 +189,12 @@ const edit = (item) => {
   form.value = JSON.parse(JSON.stringify(item));
   title.value = "Edit";
   dialog.value = true;
+};
+const swalert = () => {
+  Toast.fire({
+    text: "success",
+    icon: "success",
+  });
 };
 </script>
 <template>
