@@ -1,6 +1,8 @@
 <script setup>
 import { ref,computed } from "vue";
 import { useI18n } from "vue-i18n";
+import Swal from "sweetalert2";
+import Toast from "@/helpers/toast";
 const deleteBook = ref({});
 const search = ref("");
 const dialog = ref(false);
@@ -35,6 +37,12 @@ const addBook = () => {
         public_year: form.value.public_year,
         author_name: form.value.author_name,
       });
+
+      Toast.fire({
+        text: "Records Add successfully",
+        icon: "success",
+      })
+
     }else if(title.value=="បញ្ចូល"){
       items.value.push({
         b_name: form.value.b_name,
@@ -52,6 +60,12 @@ const addBook = () => {
         public_year: form.value.public_year,
         author_name: form.value.author_name,
       });
+
+      Toast.fire({
+        text: "Records Edit successfully",
+        icon: "success",
+      })
+
     }
     title.value = "Add";
     errorMessage.value==""
@@ -72,14 +86,34 @@ const reset = () => {
 };
 const deleteFunction = (id) => {
   deleteBook.value = items.value.findIndex((t) => t.b_id == id);
-  items.value.splice(deleteBook.value, 1);
+  
+
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      items.value.splice(deleteBook.value, 1);
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your record has been deleted.",
+        icon: "success",
+      });
+    }
+  })
+
 };
 
 const edit = (item) => {
   form.value = JSON.parse(JSON.stringify(item));
   console.log(item);
   dialog.value = true;
-  title.value = "Edit";
+  title.value = "Save";
 };
 
 const headers = ref([
@@ -193,7 +227,7 @@ const items = ref([
     </v-row>
 
     <!-- dailog field -->
-    <v-dialog :width="600" v-model="dialog" :class="appFontStyle">
+    <v-dialog :width="600" v-model="dialog" :class="appFontStyle" persistent>
       <v-card class="pa-3">
         <v-card-title> {{ $t('message.AddBooks') }}</v-card-title>
         <v-card-text>
@@ -253,10 +287,14 @@ const items = ref([
             </v-col>
           </v-row>
           <p class="text-red">{{ errorMessage }}</p>
-          <v-row>
-            <v-col cols="12" md="6">
+          <v-row width="200">
+            <v-col cols="12" md="9">
               <v-btn color="success" @click="addBook"> {{ $t(`message.${title}`) }} </v-btn>
-              <v-btn color="red" class="ml-4" @click="reset"> {{ $t('message.Reset') }} </v-btn>
+              <v-btn color="red" class="ml-2" @click="reset"> {{ $t('message.Reset') }} </v-btn>
+              <v-btn variant="outlined" class="ml-2 text-black" @click="dialog=false">Cancel</v-btn>
+            </v-col>
+            <v-col>
+              
             </v-col>
           </v-row>
         </v-card-text>

@@ -2,6 +2,7 @@
 import { ref, watch, computed } from "vue";
 import { useI18n } from "vue-i18n";
 import Item from "../data/data.json";
+import Swal from "sweetalert2";
 
 const bookItem = ref(Item);
 const dialog = ref(false);
@@ -52,6 +53,8 @@ const addItem = () => {
       title: form.value.bName,
       sDate: form.value.date,
     });
+    title.value = "Add";
+
     console.log(index);
   }
   form.value.sId = null;
@@ -76,14 +79,32 @@ const edit = (item) => {
   form.value.sMajor = item.major;
   form.value.bName = item.title;
   form.value.date = item.sDate;
-  title.value = "Edit";
+  title.value = "Save";
   dialog.value = true;
   console.log(item);
 };
 const deleteFunction = (id) => {
   deleteItem.value = items.value.findIndex((t) => t.studentID == parseFloat(id));
-  items.value.splice(deleteItem.value, 1);
-  console.log(deleteItem.value);
+
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      items.value.splice(deleteItem.value, 1);
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your record has been deleted.",
+        icon: "success",
+      });
+    }
+  })
+  
 };
 const headers = ref([
   {
@@ -132,7 +153,7 @@ const items = ref([
 </script>
 <template>
   <div>
-    <v-dialog v-model="dialog" :width="600" :class="appFontStyle">
+    <v-dialog v-model="dialog" :width="600" :class="appFontStyle" persistent>
       <v-card class="pa-3">
         <v-card-title>{{ $t('message.BorrowBook') }}</v-card-title>
         <v-card-text>
@@ -200,9 +221,11 @@ const items = ref([
             </v-col>
           </v-row>
           <v-row>
-            <v-col cols="12" md="6">
+            <v-col cols="12" md="9">
               <v-btn color="success" @click="addItem">{{ title }}</v-btn>
               <v-btn color="red" class="ml-4" @click="reset"> Reset </v-btn>
+              <v-btn variant="outlined" class="ml-2 text-black" @click="dialog=false">Cancel</v-btn>
+
             </v-col>
           </v-row>
         </v-card-text>

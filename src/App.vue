@@ -41,17 +41,19 @@ const toggleTheme = () => {
 //login dailog
 const dailogLogin = ref(true);
 const visible = ref(false);
+const password = ref('');
+
+
 </script>
 
 <template>
   //login dailog
-  <v-dialog v-model="dailogLogin" max-width="400" persistent>
-    
+  <v-dialog v-model="dailogLogin" max-width="300" persistent >
     <v-card
       class="mx-auto pa-6 pb-8"
       elevation="8"
-      max-width="550"
-      width="900"
+      max-width="450"
+      width="800"
       rounded="lg"
     >
     <v-img
@@ -92,6 +94,7 @@ const visible = ref(false);
         placeholder="Enter your password"
         prepend-inner-icon="mdi-lock-outline"
         variant="outlined"
+        v-model="password"
         @click:append-inner="visible = !visible"
       ></v-text-field>
 

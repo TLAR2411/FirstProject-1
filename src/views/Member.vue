@@ -4,6 +4,8 @@ import { ref, watch, computed } from "vue";
 import { StoreList } from "../store/store";
 import { useI18n } from "vue-i18n";
 import Toast from "@/helpers/toast";
+import ToastDelete from "@/helpers/deleteToast";
+import Swal from "sweetalert2";
 const search = ref("");
 const errorMessage = ref("");
 const rules = ref({
@@ -142,7 +144,7 @@ const addItems = () => {
       title.value = "Add";
 
       Toast.fire({
-        text: "Item added successfully",
+        text: "Member Add successfully",
         icon: "success",
       });
 
@@ -157,6 +159,12 @@ const addItems = () => {
         id: form.value.id,
         role: form.value.role,
       });
+
+      Toast.fire({
+        text: "Member Edit successfully",
+        icon: "success",
+      });
+
       title.value = "Add";
     }
     errorMessage.value = "";
@@ -177,8 +185,27 @@ const reset = () => {
 };
 const deleteFunction = (id) => {
   deleteItem.value = items.value.findIndex((t) => t.id == parseFloat(id));
-  items.value.splice(deleteItem.value, 1);
-  console.log(deleteItem.value);
+  
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      items.value.splice(deleteItem.value, 1);
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your record has been deleted.",
+        icon: "success",
+      });
+    }
+  })
+
+
 };
 const detailView = (id) => {
   ViewItem.value = items.value.findIndex((t) => t.id == parseFloat(id));
@@ -187,7 +214,9 @@ const detailView = (id) => {
 
 const edit = (item) => {
   form.value = JSON.parse(JSON.stringify(item));
-  title.value = "Edit";
+  title.value = "Save";
+
+
   dialog.value = true;
 };
 const swalert = () => {
@@ -200,7 +229,7 @@ const swalert = () => {
 <template>
   <v-container>
     <!-- dailog -->
-    <v-dialog v-model="dialog" width="600">
+    <v-dialog v-model="dialog" width="600" persistent>
       <v-card class="pa-6">
         <v-card-tittle :class="appFontStyle">
           <!-- <h2>{{ $t("message.AddMembers") }}</h2> -->
@@ -259,13 +288,15 @@ const swalert = () => {
             </v-row>
             <p class="text-red mb-3">{{ errorMessage }}</p>
             <v-row>
-              <v-col cols="12" md="6">
+              <v-col cols="12" md="9">
                 <v-btn color="success" @click="addItems">{{
                   $t(`message.${title}`)
                 }}</v-btn>
                 <v-btn color="red" class="ml-4" @click="reset">
                   {{ $t("message.Reset") }}
                 </v-btn>
+                <v-btn variant="outlined" class="ml-2 text-black" @click="dialog=false">Cancel</v-btn>
+
               </v-col>
             </v-row>
           </v-form>
