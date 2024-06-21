@@ -213,7 +213,7 @@ console.log(search.value);
         <v-divider> </v-divider>
       </v-row>
 
-      <v-dialog v-model="dialog" max-width="980" class="pa-6" scroll-strategy="block" scrollable>
+      <v-dialog v-model="dialog" max-width="980" class="pa-6" scroll-strategy="block">
         <div class="scrollable-content " >
           <v-row class="bg-white rounded-lg">
           <v-col cols="12" md="5">
@@ -292,7 +292,7 @@ console.log(search.value);
                 {{ findId.subtitle }}
               </v-card-text>
               <template v-slot:actions>
-                <a :href="findId.link" target="_parent">
+                <a :href="findId.link" target="_blank">
                   <v-btn class="mt-5 bg-green"> {{$t('message.ReadMore')}} </v-btn>
                 </a>
 

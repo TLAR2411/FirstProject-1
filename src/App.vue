@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from "vue-router";
 import { useTheme } from "vuetify";
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
-
+import Toast from "./helpers/toast";
 const i18n = useI18n();
 
 const drawer = ref(null);
@@ -41,26 +41,52 @@ const toggleTheme = () => {
 //login dailog
 const dailogLogin = ref(true);
 const visible = ref(false);
-const password = ref('');
 
+const rules = ref({
+  required: (value) => !!value || "Field is required",
+});
 
+const email = ref("");
+const password = ref("");
+const errorMessage = ref("");
+const login = () => {
+  if (email.value.trim() === "" || password.value.trim() === "") {
+    errorMessage.value = "Please enter your email and password";
+  } else {
+    if (email.value == "admin@gmail.com" && password.value == "admin123") {
+      
+      Toast.fire({
+        icon: "success",
+        title: "Login Success",
+      });
+      dailogLogin.value = false;
+      
+
+    } else if (
+      email.value == "admin@gmail.com" &&
+      password.value != "admin123"
+    ) {
+      errorMessage.value = "Your password is incorrect";
+    }else if(password.value == "admin123" && email.value != "admin@gmail.com") {
+      errorMessage.value = "Your email is incorrect";
+    }else if(email.value != "admin@gmail.com" && password.value != "admin123"){
+      errorMessage.value = "Your email and password is incorrect";
+    }
+  }
+};
 </script>
 
 <template>
   //login dailog
   <v-dialog v-model="dailogLogin" :width="500" persistent opacity="1">
-    <v-card
-      class="mx-auto pa-6 pb-8"
-      elevation="8"
-      rounded="lg"
-    >
-    <v-img
-      :width="90"
-      aspect-ratio="16/9"
-      cover
-      class="mx-auto"
-      src="https://nubb.edu.kh/wp-content/uploads/2021/04/UBB-logo-small.png"
-    ></v-img>
+    <v-card class="mx-auto pa-6 pb-8" elevation="8" rounded="lg">
+      <v-img
+        :width="90"
+        aspect-ratio="16/9"
+        cover
+        class="mx-auto"
+        src="https://nubb.edu.kh/wp-content/uploads/2021/04/UBB-logo-small.png"
+      ></v-img>
       <div class="text-h6 text-medium-emphasis">Account</div>
 
       <v-text-field
@@ -69,6 +95,8 @@ const password = ref('');
         variant="outlined"
         placeholder="johndoe@gmail.com"
         type="email"
+        v-model="email"
+        :rules="[rules.required]"
       ></v-text-field>
 
       <div
@@ -95,7 +123,9 @@ const password = ref('');
         variant="outlined"
         v-model="password"
         @click:append-inner="visible = !visible"
+        :rules="[rules.required]"
       ></v-text-field>
+      <p class="text-center mb-2 text-red">{{ errorMessage }}</p>
 
       <v-card class="mb-12" color="surface-variant" variant="tonal">
         <v-card-text class="text-medium-emphasis text-caption">
@@ -111,7 +141,7 @@ const password = ref('');
         size="large"
         variant="tonal"
         block
-        @click="dailogLogin = false"
+        @click="login()"
       >
         Log In
       </v-btn>
