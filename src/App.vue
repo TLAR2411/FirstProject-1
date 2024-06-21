@@ -65,9 +65,10 @@ const password = ref('');
 
       <v-text-field
         density="comfortable"
-        placeholder="Email address"
         prepend-inner-icon="mdi-email-outline"
         variant="outlined"
+        placeholder="johndoe@gmail.com"
+        type="email"
       ></v-text-field>
 
       <div

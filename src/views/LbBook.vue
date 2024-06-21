@@ -292,7 +292,7 @@ console.log(search.value);
                 {{ findId.subtitle }}
               </v-card-text>
               <template v-slot:actions>
-                <a :href="findId.link">
+                <a :href="findId.link" target="_parent">
                   <v-btn class="mt-5 bg-green"> {{$t('message.ReadMore')}} </v-btn>
                 </a>
 
