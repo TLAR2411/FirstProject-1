@@ -153,6 +153,7 @@ const items = ref([
 </script>
 <template>
   <div>
+
     <v-dialog v-model="dialog" :width="600" :class="appFontStyle" persistent>
       <v-card class="pa-3">
         <v-card-title>{{ $t('message.BorrowBook') }}</v-card-title>
@@ -231,6 +232,7 @@ const items = ref([
         </v-card-text>
       </v-card>
     </v-dialog>
+
     <v-row class="align-center">
       <v-col cols="12" md="6">
         <v-card :variant="flat - 0">
@@ -238,7 +240,7 @@ const items = ref([
             {{ $t('message.BorrowBook') }}
           </v-card-title>
           <v-card-subtitle class="text-subtitle">
-            U can read our book right here. Learn Earn Fuck
+            Read, Imagine, Create
           </v-card-subtitle>
         </v-card>
       </v-col>

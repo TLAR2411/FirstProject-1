@@ -73,12 +73,14 @@ const login = () => {
       errorMessage.value = "Your email and password is incorrect";
     }
   }
+  email.value = ""
+  password.value = "";
 };
 </script>
 
 <template>
   //login dailog
-  <v-dialog v-model="dailogLogin" :width="500" persistent opacity="1">
+  <v-dialog v-model="dailogLogin" :width="500" persistent opacity="0.9">
     <v-card class="mx-auto pa-6 pb-8" elevation="8" rounded="lg">
       <v-img
         :width="90"
@@ -301,7 +303,7 @@ const login = () => {
       </v-list>
       <template v-slot:append>
         <div class="pa-2">
-          <v-btn block class="bg-green">
+          <v-btn block class="bg-green" @click="dailogLogin= true" >
             {{ $t("message.SignOut") }}
             <v-icon>mdi-exit-to-app</v-icon>
           </v-btn>

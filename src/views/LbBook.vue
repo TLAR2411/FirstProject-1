@@ -166,7 +166,7 @@ console.log(search.value);
               {{ $t("message.AllBook") }}
             </v-card-title>
             <v-card-subtitle class="text-subtitle">
-              U can read our book right here. Learn Earn Fuck
+              Your Gateway to Knowledge.
             </v-card-subtitle>
           </v-card>
         </v-col>
