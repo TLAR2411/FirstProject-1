@@ -11,6 +11,7 @@ const searchBook = ref("");
 const title = ref("Add");
 const deleteItem = ref({});
 console.log(bookItem.value);
+
 watch(searchBook, () => {
   bookItem.value = Item.filter((item) => {
     return item.title.toLowerCase().includes(searchBook.value.toLowerCase());
@@ -204,7 +205,8 @@ const items = ref([
                     variant="outlined"
                     density="compact"
                     persistent-hint
-                    label="search book"
+                    v-model="searchBook"
+                    
                   ></v-text-field>
                 </template>
               </v-select>

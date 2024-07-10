@@ -228,6 +228,7 @@ const swalert = () => {
 </script>
 <template>
   <v-container>
+    
     <!-- dailog -->
     <v-dialog v-model="dialog" width="600" persistent>
       <v-card class="pa-6">
