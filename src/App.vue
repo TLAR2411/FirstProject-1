@@ -128,6 +128,9 @@ const login = () => {
         :rules="[rules.required]"
       ></v-text-field>
       <p class="text-center mb-2 text-red">{{ errorMessage }}</p>
+      <p class="text-red">Demo</p>
+      <p>email: admin@gmail.com</p>
+      <p>password: admin123</p>
 
       <v-card class="mb-12" color="surface-variant" variant="tonal">
         <v-card-text class="text-medium-emphasis text-caption">
